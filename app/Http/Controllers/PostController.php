@@ -113,6 +113,10 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return view('posts.show', compact('post')); // 返回文章详情视图
+        \Log::info('Post retrieved: ', [$post->toArray()]); // 记录到日志中
+        return view('posts.show', compact('post'));
     }
+    
+
+    
 }
